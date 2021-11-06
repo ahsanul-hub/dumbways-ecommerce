@@ -1,0 +1,41 @@
+{{>header}}
+<div class="container products-container mt-5 pt-3 mb-5">
+        <form action="/add-product" method="post" class="row" enctype="multipart/form-data">
+            <div class="file-input-group col-4 p-3">
+                <div class="input-group mb-12"
+                ><label class="col-12 " for="inputGroupFile02">Tambahkan Gambar: </label>
+        <input type="file" name="image" onchange="handleChange()" class="form-control mt-2" id="inputGroupFile02" style="max-height: 35px;">
+        <br>
+        <div id="preview-photo"></div>
+        
+        </div>
+            </div>
+    {{!-- <img src="https://cf.shopee.co.id/file/c22125fa83be7b82a39779f7ef3e6ca3" alt="" class="image-detail pt-3"> --}}
+    <div class=" file-input-group col-6 pt-2" style="padding-left: 4rem;">
+        <label for="inputTitle" class="form-label">Title</label>
+        <input type="text" name="name" class="col-11 form-control"> 
+        <label for="inputStock" class="form-label">Stock</label>
+        <input type="number" name ="stock" class="col-3 form-control">
+        <label for="inputPrice" class="form-label">Price</label>
+        <input type="number" name="price" class="col-3 form-control">
+        
+        <label for="inputDescription" class="form-label">Description</label>
+        <textarea name="description" id=""  class="form-control" cols="10" rows="5"></textarea>
+        <br>
+        <div class="col-12">
+            <button type="submit" class="btn btn-dark">Add Product</button>
+        </div>
+    </div>
+        </form>
+    
+</div>
+
+<script>
+    const handleChange = () =>{
+        const previewElement = document.getElementById('preview-photo')
+        const value = URL.createObjectURL(event.target.files[0])
+
+        previewElement.innerHTML = ` <img src="${value}" style="width: 240px; margin-left:10px;" />`
+    }
+</script>
+{{>footer}}

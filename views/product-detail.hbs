@@ -1,0 +1,25 @@
+{{>header}}
+<div class="container products-container mt-5 pt-3 mb-5">
+    {{#if isOwner}}
+    <div style="display:Inline;">
+        <a href="/edit-product/{{product.id}}" class="btn btn-outline-warning">Edit</a>
+        <a href="/delete-product/{{product.id}}" class="btn btn-outline-danger">Hapus</a>
+    </div>
+    {{/if}}
+    <div class="row">
+    <img src="{{product.photo}}" alt="" class="image-detail pt-3">
+    <div class="desc col-7 pt-2" style="padding-left: 4rem;">
+        <h2 >
+            {{product.title}}
+        </h2>
+
+        <div class="stock">Stok tersedia : {{product.stock}}</div>
+        <h2 class="price"style="color: #6B4F4F;">Rp. {{product.price}}</h2>
+        <br>
+        <p>{{product.description}}</p>
+        
+    </div>
+    </div>
+    
+</div>
+{{>footer}}

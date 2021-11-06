@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link href="../public/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">E-Commerce</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">HnM</a></li>
+                                <li><a class="dropdown-item" href="#!">Uniqlo</a></li>
+                                <li><a class="dropdown-item" href="#!">Zara</a></li>
+                                <li><a class="dropdown-item" href="#!">Ventela</a></li>
+                                <li><a class="dropdown-item" href="#!">Emory</a></li>
+                                <li><a class="dropdown-item" href="#!">Nike</a></li>
+                                <li><a class="dropdown-item" href="#!">Uniqlo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {{!-- <form class="d-flex"> --}}
+
+                        {{#if isLogin}}
+                        <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img  style ="width: 30px; border-radius:50%" src="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png" alt="">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
+                            {{#if userStatus}}
+                            <li><a class="dropdown-item" href="/cart/1">Cart</a></li>
+                            <li><a class="dropdown-item" href="#">Transactions</a></li>
+                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            {{else}}
+                             {{!-- <li><a class="dropdown-item" href="/cart/1">Cart</a></li> --}}
+                            <li><a class="dropdown-item" href="/add-product">Add Product</a></li>
+                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            {{/if}}
+                        </ul>
+                        </div>
+                        {{else}}
+                        <a href="/login" class="btn btn-outline-dark mr-5" style="margin-right: 5px;" >
+                           Login
+                        </a>
+                        <a href="/register" class="btn btn-outline-light btn-register" >
+                            Register
+                        </a>
+                        {{/if}}
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </nav>
+        
+        

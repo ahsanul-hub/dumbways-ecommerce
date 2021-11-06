@@ -1,0 +1,28 @@
+{{>header}}
+<div class="title-cart">
+   <h2>Keranjang Belanja</h2> 
+</div>
+<div class="table-cart">
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      
+      <th scope="col" colspan="2">Product</th>
+      <th scope="col">Price</th>
+      <th style="max-width:30px;" scope="col">Qty</th>
+      <th scope="col" >Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" name="name">{{product.name}}</td>
+      <td name="price">{{product.price}}</td>
+      <td style="max-width:30px;" ><input type="number" style="max-width:50px;" name="qty" id="" width="10px"></td>
+      <td><a href="/add-cart/{{product.id}}" type="submit" class="btn btn-dark">Beli</a></td>
+    </tr>
+   
+  </tbody>
+</table>
+</div>
+
+{{>footer}}
